@@ -105,7 +105,7 @@ $data = array(
     'shares' => array( 'valid' => $aRoundShares['valid'], 'invalid' => $aRoundShares['invalid'], 'invalid_percent' => $dPoolInvalidPercent, 'estimated' => $iEstShares, 'progress' => $dEstPercent ),
     'price' => $aPrice,
     'difficulty' => pow(2, $config['difficulty'] - 16),
-    'target_bits' => $config['difficulty']
+    'target_bits' => $coin->getTargetBits()
   ),
   'system' => array( 'load' => sys_getloadavg() ),
   'network' => array( 'hashrate' => $dNetworkHashrateAdjusted,

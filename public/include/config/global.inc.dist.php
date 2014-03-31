@@ -30,6 +30,13 @@ $config['SALTY'] = 'THISSHOULDALSOBERRAANNDDOOM';
 $config['algorithm'] = 'scrypt';
 
 /**
+  * Getbalance API Calls
+  *  System used for getting actual Balance from Wallet
+  *   https://github.com/MPOS/php-mpos/wiki/Config-Setup#getbalance-api-calls
+  **/
+$config['getbalancewithunconfirmed'] = true;
+
+/**
  * Database configuration
  *  MySQL database configuration
  *   https://github.com/MPOS/php-mpos/wiki/Config-Setup#wiki-database-configuration
@@ -51,6 +58,20 @@ $config['wallet']['username'] = 'testnet';
 $config['wallet']['password'] = 'testnet';
 
 /**
+ * Swiftmailer configuration
+ *  Configure your way to send mails
+ *   https://github.com/MPOS/php-mpos/wiki/Config-Setup#wiki-swiftmailer
+ **/
+$config['swiftmailer']['type'] = 'sendmail';
+$config['swiftmailer']['sendmail']['path'] = '/usr/sbin/sendmail';
+$config['swiftmailer']['sendmail']['options'] = '-bs';
+$config['switfmailer']['smtp']['host'] = 'your.mail-relay.com';
+$config['switfmailer']['smtp']['port'] = '587';
+$config['switfmailer']['smtp']['encryption'] = 'tls';
+$config['switfmailer']['smtp']['username'] = '';
+$config['switfmailer']['smtp']['password'] = '';
+
+/**
  * Getting Started Config
  *  Shown to users in the 'Getting Started' section
  *   https://github.com/MPOS/php-mpos/wiki/Config-Setup#wiki-getting-started
@@ -69,6 +90,7 @@ $config['voting_method'] = 'finder';
  *  Fetch exchange rates via an API
  *   https://github.com/MPOS/php-mpos/wiki/Config-Setup#wiki-ticker-api
  **/
+$config['price']['enabled'] = false;
 $config['price']['url'] = 'https://btc-e.com';
 $config['price']['target'] = '/api/2/ltc_usd/ticker';
 $config['price']['currency'] = 'USD';
